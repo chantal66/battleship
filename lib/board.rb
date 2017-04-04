@@ -31,7 +31,7 @@ class Board
       row('C'),
       row('D'),
       header_and_footer]
-    #binding.pry
+    
   end
 
   def print_board
@@ -41,5 +41,5 @@ class Board
   end
 end
 
-b = Board.new
-b.print_board
+# b = Board.new
+# b.print_board

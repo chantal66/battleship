@@ -1,6 +1,6 @@
 class Instructions
   
-  def Welcome_message
+  def welcome_message
     "Welcome to BATTLESHIP"
   end
 
@@ -15,7 +15,7 @@ class Instructions
     second is three units long.
     The grid has A1 at the top left and D4 at the bottom right.
 
-    Enter the squares for the two-unit ship:"
+    Enter the squares for the two-unit ship: "
   end
 
   def placement_ship_intructions(size_ship)
