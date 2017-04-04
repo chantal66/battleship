@@ -11,10 +11,10 @@ class PlayerBoardTest < Minitest::Test
     assert_instance_of PlayerBoard, player_board
   end
 
-  def test_board_can_track_hits_or_misses
-    player_board = PlayerBoard.new
+  def test_board_can_track_player_hits_and_misses
+    player_board = PlayerBoard.new 
     result = player_board.player_hits_and_misses
-    # binding.pry
+
     assert result
   end
 
@@ -43,7 +43,6 @@ class PlayerBoardTest < Minitest::Test
     assert_equal 5, result3
   end
 
-
   def test_can_add_a_hit_or_miss_when_appropiate
     hit_index = PlayerBoard.new
     result = hit_index.swapp_letter('A')
@@ -51,14 +50,13 @@ class PlayerBoardTest < Minitest::Test
     miss_index = PlayerBoard.new
     result1 = miss_index.swapp_letter('C')
 
-    hit = PlayerBoard.new 
-    # binding.pry
-    result2 = hit.add_hits_and_misses('A1', 'H')
-
+    hit = PlayerBoard.new
+    result1 = hit.add_player_hits_and_misses('A1', 'H')
+   
     miss = PlayerBoard.new
-    result3 = miss.add_hits_and_misses('C2', 'M')
-    
-    assert_equal 'H', result2.board[hit_index][1]
-    assert_equal 'M', result3.board[miss_index][2]
+    result2 = miss.add_player_hits_and_misses('C2', 'M')
+ 
+    assert_equal 'H', result1
+    assert_equal 'M', result2
   end
 end
