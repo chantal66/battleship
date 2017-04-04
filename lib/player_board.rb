@@ -6,7 +6,6 @@ class PlayerBoard
   def initialize
     @player_ships = Board.new
     @player_hits_and_misses = Board.new
-    # binding.pry
   end
 
   def add_player_hits_and_misses(location, hit_or_miss)

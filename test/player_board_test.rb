@@ -43,20 +43,21 @@ class PlayerBoardTest < Minitest::Test
     assert_equal 5, result3
   end
 
-  def test_can_add_a_hit_or_miss_when_appropiate
+  def test_can_add_a_hit_when_appropiate
     hit_index = PlayerBoard.new
     result = hit_index.swapp_letter('A')
-
-    miss_index = PlayerBoard.new
-    result1 = miss_index.swapp_letter('C')
-
     hit = PlayerBoard.new
     result1 = hit.add_player_hits_and_misses('A1', 'H')
    
+    assert_equal 'H', result1
+  end
+
+  def test_can_add_a_hit_when_appropiate
+    miss_index = PlayerBoard.new
+    result1 = miss_index.swapp_letter('C')
     miss = PlayerBoard.new
     result2 = miss.add_player_hits_and_misses('C2', 'M')
- 
-    assert_equal 'H', result1
+
     assert_equal 'M', result2
   end
 end
