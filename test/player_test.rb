@@ -63,7 +63,7 @@ class PlayerTest < Minitest::Test
     assert_equal 'M', result
   end
 
-  def test_location_can_not_be_use_twice_w_two_unit_ship
+  def test_location_can_not_use_twice_w_two_unit_ship
     player = Player.new
     result = player.ship_position(2, 'A1 A2')
     
@@ -71,7 +71,7 @@ class PlayerTest < Minitest::Test
     refute player.board.player_ships.valid_positions.include?('A2'), result
   end
 
-  def test_location_can_not_be_use_twice_w_three_unit_boat
+  def test_location_can_not_use_twice_w_three_unit_boat
     player = Player.new
     result = player.ship_position(3, 'B1 B2 B3')
     
