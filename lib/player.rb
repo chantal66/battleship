@@ -14,8 +14,13 @@ class Player
     positions.each do |location|
       row = board.swapp_letter(location[0])
       board.player_ships.board[row][location[1].to_i] = ship_size.to_s
+      board.player_ships.valid_positions.delete(location)
     end  
     board.player_ships.board
+  end
+
+  def fire(position)
+    board.player_hits_and_misses.valid_positions.delete(position)
   end
 end
 
