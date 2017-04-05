@@ -87,7 +87,11 @@ class PlayerTest < Minitest::Test
     assert_equal 0, result
   end
 
-  def test_can_player_fire_a_shot
+  def test_can_player_fire_a_shot_and_delete_position_from_board
+    player = Player.new
+    fire_a_shot = player.fire('A2')
+    result = player.board.player_hits_and_misses.valid_positions
     
+    refute result.include?('A2')
   end
 end
