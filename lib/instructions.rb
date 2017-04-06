@@ -42,7 +42,7 @@ class Instructions
     'is not the correct length'
   end
 
-  def self.too_many_chararacters
+  def self.too_many_characters
     "includes at least one location with too many characters - try something like 'B2' for each location"
   end
 

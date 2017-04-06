@@ -186,9 +186,8 @@ class InstructionsTest < Minitest::Test
   end
 
   def test_it_has_a_message_for_too_many_characters
-    result = Instructions.too_many_chararacters
+    result = Instructions.too_many_characters
     message = "includes at least one location with too many characters - try something like 'B2' for each location"
     assert_equal message, result
   end
-
 end
