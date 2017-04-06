@@ -40,6 +40,3 @@ class Board
     end  
   end
 end
-
-# b = Board.new
-# b.print_board

@@ -30,4 +30,10 @@ module ValidatePosibilities
   def puter_possibilities(possibilities)
     possibilities.delete_at(rand(possibilities.length))
   end
+
+  def position_wrong_format_or_outside_range?(locations)
+    !locations.all? do |place|
+      place[0].between?('A', 'D') && place[1].between?('1', '4')
+    end
+  end
 end

@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/emoji'
+require './test/test_helper'
 require './lib/player'
 require './lib/puter_board'
 require './lib/validate_posibilities.rb'

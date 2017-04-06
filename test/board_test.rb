@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/emoji'
+require './test/test_helper'
 require './lib/board'
 require 'pry'
 
@@ -31,14 +30,14 @@ class BoardTest < Minitest::Test
     board = Board.new
     result = board.header_and_footer
 
-    assert_equal '===========', result
+    assert_equal ['==========='], result
   end
 
   def test_has_columns_labels_from_1_to_4
     board = Board.new
     result = board.column_label
 
-    assert_equal ['.','1','2','3','4'], result
+    assert_equal ['. ','1 ','2 ','3 ','4 '], result
   end
 
   def test_board_has_rows_with_letter_A
@@ -60,13 +59,28 @@ class BoardTest < Minitest::Test
     board = Board.new
     result = board.full_board
 
-    assert_equal ['===========',
-                  [".", "1", "2", "3", "4"],
+    assert_equal [["==========="], 
+                  [". ", "1 ", "2 ", "3 ", "4 "], 
                   ["A", " ", " ", " ", " "], 
                   ["B", " ", " ", " ", " "], 
                   ["C", " ", " ", " ", " "], 
                   ["D", " ", " ", " ", " "], 
-                  '==========='], result
+                  ["==========="]], result
+    
+  end
+
+    def test_has_a_print_board
+  
+    board = Board.new
+    result = board.print_board
+
+    assert_equal [["==========="], 
+                  [". ", "1 ", "2 ", "3 ", "4 "], 
+                  ["A", " ", " ", " ", " "], 
+                  ["B", " ", " ", " ", " "], 
+                  ["C", " ", " ", " ", " "], 
+                  ["D", " ", " ", " ", " "], 
+                  ["==========="]], result
     
   end
 end
