@@ -74,26 +74,6 @@ class PlayerInterface
     end
     outcome
   end
-
-  def self.shot_verification(location, player)
-    outcome = true
-    entry = location.split
-    if quitting?(location)
-      quit
-    elsif entry.size != 1
-      invalid_try_again(Instructions.shot_locs)
-    elsif location.length != 2
-      invalid_try_again(Instructions.shot_length)
-    elsif position_wrong_format_or_outside_range?(entry)
-      invalid_try_again(Instructions.format_or_range_issue)
-    elsif already_guessed?(location, player)
-      invalid_try_again(Instructions.already_guessed)
-    else
-      outcome = false
-    end
-    outcome
-  end
-
 end
 # require 'pry'; binding.pry
 # ''
