@@ -22,14 +22,6 @@ class PuterBoard < Player
     ship_position(ship_size,coord.sort.join(' '))
   end
 
-  def check_third_position(present_location)
-    if present_location[0][0] == present_location[1][0]
-      horizontal_alignment(present_location)
-    else
-      vertical_alignment(present_location)
-    end
-  end
-
   def next_valid_position(previous_location)
     next_position = 'next'
     until all_adjacent_locations(previous_location).include?(next_position)
