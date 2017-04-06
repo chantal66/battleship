@@ -2,7 +2,7 @@ require './lib/instructions'
 require './lib/validate_posibilities'
 require 'pry'
 class PlayerInterface
-  include ValidatePosibilities
+  extend ValidatePosibilities
 
   def self.menu_message(player)
     puts Instructions.menu_message
@@ -50,10 +50,10 @@ class PlayerInterface
     end
   end
 
-  def self.ship_placement_verification(input, ship_size, player)
+  def self.ship_placement_verification(location, ship_size, player)
     outcome = true
-    entries = input.split
-    if quitting?(input)
+    entries = location.split
+    if quitting?(location)
       quit
     elsif entries.size != ship_size
       invalid_try_again(Instructions.incorrect_length)
@@ -97,4 +97,4 @@ class PlayerInterface
 end
 # require 'pry'; binding.pry
 # ''
-#  p player = PlayerInterface.menu_message('hi')
+p player = PlayerInterface.menu_message('p')
